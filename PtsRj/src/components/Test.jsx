@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Test = () => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState("Ayush");
 
   const changeUser = (e) => {
     setUser(e);
@@ -13,15 +13,16 @@ const Test = () => {
 
       <form
         onSubmit={(e) => {
-          changeUser(e.target.value);
+          // e.preventDefault();
+          changeUser(e);
         }}
         className="flex flex-col p-5 gap-5"
       >
         <input
-          onChange={(e) => {
-            console.log(e.target.value);
+          onClick={(e) => {
+            changeUser(e.target.value);
           }}
-          value={user}
+          // value={user}
           type="text"
           placeholder="Enter name"
         />

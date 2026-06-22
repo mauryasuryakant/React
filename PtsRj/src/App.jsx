@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Form from "./components/Form";
+// import Form from "./components/Form";
 
 const App = () => {
   const [counter, setCounter] = useState(1);
@@ -31,7 +31,6 @@ const App = () => {
       </button>
       </div>
       <hr className="bg-white" />
-      <Form/>
 
     </main>
   );

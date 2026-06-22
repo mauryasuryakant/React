@@ -7,7 +7,7 @@ const Form = () => {
   };
 
   return (
-    <>
+    <main className="bg-black text-white h-screen w-full p-10">
       <form onSubmit={(e) => {
         submitHandler(e)
       }}>
@@ -20,7 +20,7 @@ const Form = () => {
           Submit
         </button>
       </form>
-    </>
+    </main>
   );
 };
 
