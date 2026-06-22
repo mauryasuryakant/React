@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Form from "./components/Form";
 
 const App = () => {
   const [counter, setCounter] = useState(1);
@@ -15,20 +16,23 @@ const App = () => {
       <div className="flex" >
       <h1 className="text-6xl font-extrabold tracking-tighter pb-10">{counter}</h1>
       </div>
-      <div className="flex gap-4"> 
+      <div className="flex gap-4 mb-10">
       <button
         onClick={IncreaseCount}
-        className="bg-[#20B2AA] hover:bg-[#4b8885] text-white font-medium py-2 px-4 rounded-lg transition colors duration-200"
+        className="bg-[#20B2AA] hover:bg-emerald-600 text-white font-medium py-2 px-4 rounded-lg transition colors duration-200"
       >
         Increase
       </button>
       <button
         onClick={DecreaseCount}
-        className="bg-[#20B2AA] hover:bg-[#4b8885] text-white font-medium py-2 px-4 rounded-lg transition colors duration-200"
+        className="bg-[#20B2AA] hover:bg-emerald-600 text-white font-medium py-2 px-4 rounded-lg transition colors duration-200"
       >
         Decrease
       </button>
       </div>
+      <hr className="bg-white" />
+      <Form/>
+
     </main>
   );
 };
