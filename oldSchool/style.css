@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif   ;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: aliceblue;
+}
+
+#btn {
+    background-color: lightseagreen;
+    color: white;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    padding: 4px;
+    margin: 4px;
+    border: none;
+    font-size: larger;
+}
+
+main {
+    padding: 100px;
+}

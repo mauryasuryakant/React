@@ -1,9 +1,13 @@
-// import React from 'react'
+import {useState} from 'react'
 
 const Form = () => {
+
+  const [name, setName] = useState("")
+
   const submitHandler = (e) => {
     e.preventDefault()
-    console.log(`Hello, ${e}`)
+    // console.log(`Hello, ${e.target.value}`)
+    console.log(e)
   };
 
   return (
@@ -12,6 +16,7 @@ const Form = () => {
         submitHandler(e)
       }}>
         <input
+        value={name}
           className="bg-white mb-5 text-black rounded-l px-4 py-2 "
           type="text"
           placeholder="Enter Your name"
