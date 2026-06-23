@@ -6,7 +6,7 @@ const Form = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    cconsole.log(`Hello, ${e.target.value}`)
+    console.log(`Hello, ${e.target.value}`)
   };
 
   return (
