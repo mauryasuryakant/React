@@ -3,7 +3,7 @@
 const Form = () => {
   const submitHandler = (e) => {
     e.preventDefault()
-    console.log(`Hello, ${e}`)
+    console.log(`Hello, ${e.target.value}`)
   };
 
   return (
