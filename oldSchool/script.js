@@ -18,3 +18,9 @@
 // }
 
 // counter()
+
+
+const x = console.log("a")
+console.log(x)
+const y = () => console.log("b")
+console.log(y)
