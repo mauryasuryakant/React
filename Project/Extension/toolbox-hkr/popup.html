@@ -1,0 +1,428 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accurate Modular Layout (Tight Gaps)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #1a1a1a;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Standardized 360x640 Canvas */
+    .bento-container {
+      position: relative;
+      width: 360px;
+      height: 640px;
+      background-color: #2c2a1a; /* Dark olive gap color */
+      border: 4px solid #3c3a26;
+      border-radius: 28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    /* Full wrapper for exact geometries */
+    .bento-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Typographic Label positioning */
+    .label {
+      position: absolute;
+      box-sizing: border-box;
+      pointer-events: none; /* Let clicks pass through if needed */
+    }
+
+    .label h3 {
+      margin: 0;
+      font-size: 11.5px;
+      line-height: 1.25;
+      color: #2c2a1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .label.pink h1 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.05;
+      color: #fadd4b;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .vertical-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 11px;
+      font-weight: 900;
+      color: #2c2a1a;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bento-container">
+    <svg class="bento-svg" viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg">
+      
+      <path d="
+        M 170 8 
+        L 208 8 A 16 16 0 0 1 224 24 
+        L 224 108 A 16 16 0 0 0 240 124 
+        L 336 124 A 16 16 0 0 1 352 140 
+        L 352 220 A 16 16 0 0 1 336 236 
+        L 308 236 A 16 16 0 0 0 292 252 
+        L 292 454 A 16 16 0 0 1 276 470 
+        L 204 470 A 16 16 0 0 0 188 486 
+        L 188 508 A 16 16 0 0 1 172 524 
+        L 110 524 A 16 16 0 0 1 94 508 
+        L 94 182 A 16 16 0 0 1 110 166 
+        L 138 166 A 16 16 0 0 0 154 150 
+        L 154 24 A 16 16 0 0 1 170 8 
+        Z" 
+        fill="#fb4ce4" 
+      />
+
+      <path d="
+        M 24 422 
+        L 72 422 A 16 16 0 0 1 88 438 
+        L 88 514 A 16 16 0 0 0 104 530 
+        L 172 530 A 16 16 0 0 1 188 546 
+        L 188 616 A 16 16 0 0 1 172 632 
+        L 24 632 A 16 16 0 0 1 8 616 
+        L 8 438 A 16 16 0 0 1 24 422 
+        Z" 
+        fill="#fadd4b"
+      />
+
+      <rect x="8" y="8" width="140" height="152" rx="16" fill="#fadd4b"/>
+      <rect x="230" y="8" width="122" height="110" rx="16" fill="#fadd4b"/>
+      <rect x="8" y="166" width="80" height="250" rx="16" fill="#fadd4b"/>
+      <rect x="298" y="242" width="54" height="228" rx="16" fill="#fadd4b"/>
+      <rect x="194" y="476" width="158" height="156" rx="16" fill="#fadd4b"/>
+
+    </svg>
+
+    <div class="label" style="top: 24px; left: 24px;">
+      <h3>MODULAR<br>DESIGN</h3>
+    </div>
+    
+    <div class="label pink" style="top: 195px; left: 110px;">
+      <h1>SMART<br>MODULAR<br>LAYOUT.</h1>
+    </div>
+    
+    <div class="label" style="top: 242px; left: 298px; width: 54px; height: 228px; display: flex; justify-content: center; align-items: center;">
+      <div class="vertical-text">INNOVATION</div>
+    </div>
+    
+    <div class="label" style="top: 496px; left: 214px;">
+      <h3>MODERN UI<br>SYSTEM</h3>
+    </div>
+  </div>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrome Extension Modular Layout</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+    /* Optimized for Chrome Extension Popup */
+    body {
+      margin: 0;
+      padding: 0;
+      width: 252px;  /* Scaled down width */
+      height: 448px; /* Safely below your 489px limit */
+      background-color: #1a1a1a;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden; /* Prevents extension scrollbars */
+    }
+
+    /* Scaling Wrapper */
+    .scale-wrapper {
+      width: 252px;
+      height: 448px;
+    }
+
+    /* Original Canvas Setup - Scaled Down 30% */
+    .bento-container {
+      position: relative;
+      width: 360px;
+      height: 640px;
+      background-color: #2c2a1a;
+      border: 4px solid #3c3a26;
+      border-radius: 28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      
+      /* This single line mathematically shrinks the SVG and HTML overlays flawlessly */
+      transform: scale(0.7); 
+      transform-origin: top left;
+    }
+
+    .bento-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .label {
+      position: absolute;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .label h3 {
+      margin: 0;
+      font-size: 11.5px;
+      line-height: 1.25;
+      color: #2c2a1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .label.pink h1 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.05;
+      color: #fadd4b;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .vertical-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 11px;
+      font-weight: 900;
+      color: #2c2a1a;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scale-wrapper">
+    <div class="bento-container">
+      <svg class="bento-svg" viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg">
+        
+        <path d="
+          M 170 8 
+          L 208 8 A 16 16 0 0 1 224 24 
+          L 224 108 A 16 16 0 0 0 240 124 
+          L 336 124 A 16 16 0 0 1 352 140 
+          L 352 220 A 16 16 0 0 1 336 236 
+          L 308 236 A 16 16 0 0 0 292 252 
+          L 292 454 A 16 16 0 0 1 276 470 
+          L 204 470 A 16 16 0 0 0 188 486 
+          L 188 508 A 16 16 0 0 1 172 524 
+          L 110 524 A 16 16 0 0 1 94 508 
+          L 94 182 A 16 16 0 0 1 110 166 
+          L 138 166 A 16 16 0 0 0 154 150 
+          L 154 24 A 16 16 0 0 1 170 8 
+          Z" 
+          fill="#fb4ce4" 
+        />
+
+        <path d="
+          M 24 422 
+          L 72 422 A 16 16 0 0 1 88 438 
+          L 88 514 A 16 16 0 0 0 104 530 
+          L 172 530 A 16 16 0 0 1 188 546 
+          L 188 616 A 16 16 0 0 1 172 632 
+          L 24 632 A 16 16 0 0 1 8 616 
+          L 8 438 A 16 16 0 0 1 24 422 
+          Z" 
+          fill="#fadd4b"
+        />
+
+        <rect x="8" y="8" width="140" height="152" rx="16" fill="#fadd4b"/>
+        <rect x="230" y="8" width="122" height="110" rx="16" fill="#fadd4b"/>
+        <rect x="8" y="166" width="80" height="250" rx="16" fill="#fadd4b"/>
+        <rect x="298" y="242" width="54" height="228" rx="16" fill="#fadd4b"/>
+        <rect x="194" y="476" width="158" height="156" rx="16" fill="#fadd4b"/>
+
+      </svg>
+
+      <div class="label" style="top: 24px; left: 24px;">
+        <h3>MODULAR<br>DESIGN</h3>
+      </div>
+      
+      <div class="label pink" style="top: 195px; left: 110px;">
+        <h1>SMART<br>MODULAR<br>LAYOUT.</h1>
+      </div>
+      
+      <div class="label" style="top: 242px; left: 298px; width: 54px; height: 228px; display: flex; justify-content: center; align-items: center;">
+        <div class="vertical-text">INNOVATION</div>
+      </div>
+      
+      <div class="label" style="top: 496px; left: 214px;">
+        <h3>MODERN UI<br>SYSTEM</h3>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrome Extension - Adjusted Native Height</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      /* Background matches the Chrome extension popup canvas */
+      background-color: #1a1a1a;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Native Width kept at 360px.
+      Height reduced directly to 480px (Safely below the 489px max limit).
+    */
+    .bento-container {
+      position: relative;
+      width: 360px;
+      height: 480px; 
+      background-color: #2c2a1a;
+      border: 4px solid #3c3a26;
+      border-radius: 28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    .bento-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .label {
+      position: absolute;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .label h3 {
+      margin: 0;
+      font-size: 11.5px;
+      line-height: 1.25;
+      color: #2c2a1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .label.pink h1 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.05;
+      color: #fadd4b;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .vertical-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 11px;
+      font-weight: 900;
+      color: #2c2a1a;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bento-container">
+    <svg class="bento-svg" viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg">
+      
+      <path d="
+        M 170 8 
+        L 208 8 A 16 16 0 0 1 224 24 
+        L 224 48 A 16 16 0 0 0 240 64 
+        L 336 64 A 16 16 0 0 1 352 80 
+        L 352 160 A 16 16 0 0 1 336 176 
+        L 308 176 A 16 16 0 0 0 292 192 
+        L 292 294 A 16 16 0 0 1 276 310 
+        L 204 310 A 16 16 0 0 0 188 326 
+        L 188 348 A 16 16 0 0 1 172 364 
+        L 110 364 A 16 16 0 0 1 94 348 
+        L 94 182 A 16 16 0 0 1 110 166 
+        L 138 166 A 16 16 0 0 0 154 150 
+        L 154 24 A 16 16 0 0 1 170 8 
+        Z" 
+        fill="#fb4ce4" 
+      />
+
+      <path d="
+        M 24 262 
+        L 72 262 A 16 16 0 0 1 88 278 
+        L 88 354 A 16 16 0 0 0 104 370 
+        L 172 370 A 16 16 0 0 1 188 386 
+        L 188 456 A 16 16 0 0 1 172 472 
+        L 24 472 A 16 16 0 0 1 8 456 
+        L 8 278 A 16 16 0 0 1 24 262 
+        Z" 
+        fill="#fadd4b"
+      />
+
+      <rect x="8" y="8" width="140" height="152" rx="16" fill="#fadd4b"/>
+      <rect x="230" y="8" width="122" height="50" rx="16" fill="#fadd4b"/>
+      <rect x="8" y="166" width="80" height="90" rx="16" fill="#fadd4b"/>
+      <rect x="298" y="182" width="54" height="128" rx="16" fill="#fadd4b"/>
+      <rect x="194" y="316" width="158" height="156" rx="16" fill="#fadd4b"/>
+
+    </svg>
+
+    <div class="label" style="top: 24px; left: 24px;">
+      <h3>MODULAR<br>DESIGN</h3>
+    </div>
+    
+    <div class="label pink" style="top: 130px; left: 110px;">
+      <h1>SMART<br>MODULAR<br>LAYOUT.</h1>
+    </div>
+    
+    <div class="label" style="top: 182px; left: 298px; width: 54px; height: 128px; display: flex; justify-content: center; align-items: center;">
+      <div class="vertical-text">INNOVATION</div>
+    </div>
+    
+    <div class="label" style="top: 336px; left: 214px;">
+      <h3>MODERN UI<br>SYSTEM</h3>
+    </div>
+  </div>
+
+</body>
+</html>
