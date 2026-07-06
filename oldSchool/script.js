@@ -20,7 +20,15 @@
 // counter()
 
 
-const x = console.log("a")
-console.log(x)
-const y = () => console.log("b")
-console.log(y)
+// const x = console.log("a")
+// console.log(x)
+// const y = () => console.log("b")
+// console.log(y)
+
+
+let headingOne = document.getElementById('ss')
+console.log(headingOne)
+
+if (headingOne) {
+    headingOne.textContent = "Hello Bacchhooooooonn"
+}
