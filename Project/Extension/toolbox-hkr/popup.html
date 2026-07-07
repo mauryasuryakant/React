@@ -1,428 +1,268 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accurate Modular Layout (Tight Gaps)</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #1a1a1a;
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* Standardized 360x640 Canvas */
-    .bento-container {
-      position: relative;
-      width: 360px;
-      height: 640px;
-      background-color: #2c2a1a; /* Dark olive gap color */
-      border: 4px solid #3c3a26;
-      border-radius: 28px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-      overflow: hidden;
-    }
-
-    /* Full wrapper for exact geometries */
-    .bento-svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Typographic Label positioning */
-    .label {
-      position: absolute;
-      box-sizing: border-box;
-      pointer-events: none; /* Let clicks pass through if needed */
-    }
-
-    .label h3 {
-      margin: 0;
-      font-size: 11.5px;
-      line-height: 1.25;
-      color: #2c2a1a;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .label.pink h1 {
-      margin: 0;
-      font-size: 32px;
-      line-height: 1.05;
-      color: #fadd4b;
-      text-transform: uppercase;
-      letter-spacing: -0.5px;
-    }
-
-    .vertical-text {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 11px;
-      font-weight: 900;
-      color: #2c2a1a;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="bento-container">
-    <svg class="bento-svg" viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg">
-      
-      <path d="
-        M 170 8 
-        L 208 8 A 16 16 0 0 1 224 24 
-        L 224 108 A 16 16 0 0 0 240 124 
-        L 336 124 A 16 16 0 0 1 352 140 
-        L 352 220 A 16 16 0 0 1 336 236 
-        L 308 236 A 16 16 0 0 0 292 252 
-        L 292 454 A 16 16 0 0 1 276 470 
-        L 204 470 A 16 16 0 0 0 188 486 
-        L 188 508 A 16 16 0 0 1 172 524 
-        L 110 524 A 16 16 0 0 1 94 508 
-        L 94 182 A 16 16 0 0 1 110 166 
-        L 138 166 A 16 16 0 0 0 154 150 
-        L 154 24 A 16 16 0 0 1 170 8 
-        Z" 
-        fill="#fb4ce4" 
-      />
-
-      <path d="
-        M 24 422 
-        L 72 422 A 16 16 0 0 1 88 438 
-        L 88 514 A 16 16 0 0 0 104 530 
-        L 172 530 A 16 16 0 0 1 188 546 
-        L 188 616 A 16 16 0 0 1 172 632 
-        L 24 632 A 16 16 0 0 1 8 616 
-        L 8 438 A 16 16 0 0 1 24 422 
-        Z" 
-        fill="#fadd4b"
-      />
-
-      <rect x="8" y="8" width="140" height="152" rx="16" fill="#fadd4b"/>
-      <rect x="230" y="8" width="122" height="110" rx="16" fill="#fadd4b"/>
-      <rect x="8" y="166" width="80" height="250" rx="16" fill="#fadd4b"/>
-      <rect x="298" y="242" width="54" height="228" rx="16" fill="#fadd4b"/>
-      <rect x="194" y="476" width="158" height="156" rx="16" fill="#fadd4b"/>
-
-    </svg>
-
-    <div class="label" style="top: 24px; left: 24px;">
-      <h3>MODULAR<br>DESIGN</h3>
-    </div>
-    
-    <div class="label pink" style="top: 195px; left: 110px;">
-      <h1>SMART<br>MODULAR<br>LAYOUT.</h1>
-    </div>
-    
-    <div class="label" style="top: 242px; left: 298px; width: 54px; height: 228px; display: flex; justify-content: center; align-items: center;">
-      <div class="vertical-text">INNOVATION</div>
-    </div>
-    
-    <div class="label" style="top: 496px; left: 214px;">
-      <h3>MODERN UI<br>SYSTEM</h3>
-    </div>
-  </div>
-
-</body>
-</html> -->
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chrome Extension Modular Layout</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
-
-    /* Optimized for Chrome Extension Popup */
-    body {
-      margin: 0;
-      padding: 0;
-      width: 252px;  /* Scaled down width */
-      height: 448px; /* Safely below your 489px limit */
-      background-color: #1a1a1a;
-      font-family: 'Montserrat', sans-serif;
-      overflow: hidden; /* Prevents extension scrollbars */
-    }
-
-    /* Scaling Wrapper */
-    .scale-wrapper {
-      width: 252px;
-      height: 448px;
-    }
-
-    /* Original Canvas Setup - Scaled Down 30% */
-    .bento-container {
-      position: relative;
-      width: 360px;
-      height: 640px;
-      background-color: #2c2a1a;
-      border: 4px solid #3c3a26;
-      border-radius: 28px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-      
-      /* This single line mathematically shrinks the SVG and HTML overlays flawlessly */
-      transform: scale(0.7); 
-      transform-origin: top left;
-    }
-
-    .bento-svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .label {
-      position: absolute;
-      box-sizing: border-box;
-      pointer-events: none;
-    }
-
-    .label h3 {
-      margin: 0;
-      font-size: 11.5px;
-      line-height: 1.25;
-      color: #2c2a1a;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .label.pink h1 {
-      margin: 0;
-      font-size: 32px;
-      line-height: 1.05;
-      color: #fadd4b;
-      text-transform: uppercase;
-      letter-spacing: -0.5px;
-    }
-
-    .vertical-text {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 11px;
-      font-weight: 900;
-      color: #2c2a1a;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="scale-wrapper">
-    <div class="bento-container">
-      <svg class="bento-svg" viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg">
-        
-        <path d="
-          M 170 8 
-          L 208 8 A 16 16 0 0 1 224 24 
-          L 224 108 A 16 16 0 0 0 240 124 
-          L 336 124 A 16 16 0 0 1 352 140 
-          L 352 220 A 16 16 0 0 1 336 236 
-          L 308 236 A 16 16 0 0 0 292 252 
-          L 292 454 A 16 16 0 0 1 276 470 
-          L 204 470 A 16 16 0 0 0 188 486 
-          L 188 508 A 16 16 0 0 1 172 524 
-          L 110 524 A 16 16 0 0 1 94 508 
-          L 94 182 A 16 16 0 0 1 110 166 
-          L 138 166 A 16 16 0 0 0 154 150 
-          L 154 24 A 16 16 0 0 1 170 8 
-          Z" 
-          fill="#fb4ce4" 
-        />
-
-        <path d="
-          M 24 422 
-          L 72 422 A 16 16 0 0 1 88 438 
-          L 88 514 A 16 16 0 0 0 104 530 
-          L 172 530 A 16 16 0 0 1 188 546 
-          L 188 616 A 16 16 0 0 1 172 632 
-          L 24 632 A 16 16 0 0 1 8 616 
-          L 8 438 A 16 16 0 0 1 24 422 
-          Z" 
-          fill="#fadd4b"
-        />
-
-        <rect x="8" y="8" width="140" height="152" rx="16" fill="#fadd4b"/>
-        <rect x="230" y="8" width="122" height="110" rx="16" fill="#fadd4b"/>
-        <rect x="8" y="166" width="80" height="250" rx="16" fill="#fadd4b"/>
-        <rect x="298" y="242" width="54" height="228" rx="16" fill="#fadd4b"/>
-        <rect x="194" y="476" width="158" height="156" rx="16" fill="#fadd4b"/>
-
-      </svg>
-
-      <div class="label" style="top: 24px; left: 24px;">
-        <h3>MODULAR<br>DESIGN</h3>
-      </div>
-      
-      <div class="label pink" style="top: 195px; left: 110px;">
-        <h1>SMART<br>MODULAR<br>LAYOUT.</h1>
-      </div>
-      
-      <div class="label" style="top: 242px; left: 298px; width: 54px; height: 228px; display: flex; justify-content: center; align-items: center;">
-        <div class="vertical-text">INNOVATION</div>
-      </div>
-      
-      <div class="label" style="top: 496px; left: 214px;">
-        <h3>MODERN UI<br>SYSTEM</h3>
-      </div>
-    </div>
-  </div>
-
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chrome Extension - Adjusted Native Height</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exact Values Toolbox Design</title>
+<style>
+    :root {
+        /* Exact color values sampled from the image */
+        --bg-app: #0B0E14;
+        --bg-container: #131520;
+        --container-border: #2C2F48;
+        
+        --color-yellow: #FFC248;
+        --color-purple-light: #A467FF;
+        --color-pink: #FF5EAD;
+        
+        --color-cyan: #3BD3E4;
+        --color-center-bg: #11131E; /* The dark space in the middle */
+        --color-green: #50E39A;
+        
+        --color-coral: #FF6D5D;
+        --color-blue: #2B9BFF;
+        --color-purple-dark: #9163FF;
+        
+        --icon-stroke: #18191C;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
     body {
-      margin: 0;
-      padding: 0;
-      /* Background matches the Chrome extension popup canvas */
-      background-color: #1a1a1a;
-      font-family: 'Montserrat', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+        background-color: var(--bg-app);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, sans-serif;
     }
 
-    /* Native Width kept at 360px.
-      Height reduced directly to 480px (Safely below the 489px max limit).
-    */
-    .bento-container {
-      position: relative;
-      width: 360px;
-      height: 480px; 
-      background-color: #2c2a1a;
-      border: 4px solid #3c3a26;
-      border-radius: 28px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-      overflow: hidden;
+    /* The outer dark container */
+    .toolbox-container {
+        background-color: var(--bg-container);
+        padding: 12px;
+        border-radius: 36px;
+        border: 2px solid var(--container-border);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     }
 
-    .bento-svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    /* The 3x3 Grid */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 150px);
+        grid-template-rows: repeat(3, 150px);
+        gap: 12px;
     }
 
-    .label {
-      position: absolute;
-      box-sizing: border-box;
-      pointer-events: none;
+    /* Base Card Styling */
+    .card {
+        border-radius: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: transform 0.2s ease;
+        cursor: pointer;
     }
 
-    .label h3 {
-      margin: 0;
-      font-size: 11.5px;
-      line-height: 1.25;
-      color: #2c2a1a;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    .card:hover {
+        transform: scale(0.97);
     }
 
-    .label.pink h1 {
-      margin: 0;
-      font-size: 32px;
-      line-height: 1.05;
-      color: #fadd4b;
-      text-transform: uppercase;
-      letter-spacing: -0.5px;
+    /* 3D Inner Shadows to replicate the puffy/embossed look */
+    .inset-shadow-light {
+        box-shadow: 
+            inset 8px 8px 16px rgba(255, 255, 255, 0.35), 
+            inset -8px -8px 16px rgba(0, 0, 0, 0.15);
+    }
+    .inset-shadow-dark {
+        box-shadow: 
+            inset 8px 8px 16px rgba(255, 255, 255, 0.2), 
+            inset -8px -8px 16px rgba(0, 0, 0, 0.25);
     }
 
-    .vertical-text {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 11px;
-      font-weight: 900;
-      color: #2c2a1a;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+    /* Specific Card Colors */
+    .c-yellow { background: var(--color-yellow); }
+    .c-purple-l { background: var(--color-purple-light); }
+    .c-pink { background: var(--color-pink); }
+    
+    .c-cyan { background: var(--color-cyan); }
+    .c-center { background: var(--color-center-bg); border-radius: 32px; position: relative;}
+    .c-green { background: var(--color-green); }
+    
+    .c-coral { background: var(--color-coral); }
+    .c-blue { background: var(--color-blue); }
+    .c-purple-d { background: var(--color-purple-dark); }
+
+    /* SVG Base Styling */
+    svg.icon {
+        width: 52px;
+        height: 52px;
+        stroke: var(--icon-stroke);
+        stroke-width: 3.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
     }
-  </style>
+
+    /* Center Glowing Briefcase */
+    .glow-icon {
+        width: 52px;
+        height: 52px;
+        stroke: url(#cyan-purple-grad);
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        filter: drop-shadow(0 0 12px rgba(164, 103, 255, 0.6));
+    }
+
+    /* Small Decorative Elements (Dots & Lines) */
+    .deco {
+        position: absolute;
+        display: flex;
+        opacity: 0.4;
+    }
+    
+    .dot {
+        width: 4px;
+        height: 4px;
+        background-color: var(--icon-stroke);
+        border-radius: 50%;
+        margin: 2px;
+    }
+
+    /* Decorative Positions */
+    .pos-tl { top: 16px; left: 16px; flex-direction: row; }
+    .pos-br-grid { bottom: 16px; right: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .pos-bl-grid { bottom: 16px; left: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    
+    /* Diagonal Lines Component */
+    .diagonal-lines {
+        position: absolute;
+        bottom: 18px;
+        right: 18px;
+        display: flex;
+        gap: 4px;
+        opacity: 0.4;
+    }
+    .line {
+        width: 3px;
+        height: 12px;
+        background-color: var(--icon-stroke);
+        border-radius: 2px;
+        transform: rotate(35deg);
+    }
+
+    /* Tiny background stars for the center */
+    .star {
+        position: absolute;
+        background: #fff;
+        border-radius: 50%;
+    }
+</style>
 </head>
 <body>
 
-  <div class="bento-container">
-    <svg class="bento-svg" viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg">
-      
-      <path d="
-        M 170 8 
-        L 208 8 A 16 16 0 0 1 224 24 
-        L 224 48 A 16 16 0 0 0 240 64 
-        L 336 64 A 16 16 0 0 1 352 80 
-        L 352 160 A 16 16 0 0 1 336 176 
-        L 308 176 A 16 16 0 0 0 292 192 
-        L 292 294 A 16 16 0 0 1 276 310 
-        L 204 310 A 16 16 0 0 0 188 326 
-        L 188 348 A 16 16 0 0 1 172 364 
-        L 110 364 A 16 16 0 0 1 94 348 
-        L 94 182 A 16 16 0 0 1 110 166 
-        L 138 166 A 16 16 0 0 0 154 150 
-        L 154 24 A 16 16 0 0 1 170 8 
-        Z" 
-        fill="#fb4ce4" 
-      />
+<div class="toolbox-container">
+    <div class="grid">
+        
+        <div class="card c-yellow inset-shadow-light">
+            <div class="deco pos-tl"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            <div class="deco pos-br-grid"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+        </div>
+        
+        <div class="card c-purple-l inset-shadow-dark">
+            <div class="deco pos-tl"><div class="dot"></div><div class="dot"></div></div>
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l3.5 2.5" /></svg>
+        </div>
+        
+        <div class="card c-pink inset-shadow-light">
+            <div class="deco pos-tl"><div class="dot"></div><div class="dot"></div></div>
+            <div class="diagonal-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M8 18l-6-6 6-6M16 6l6 6-6 6M14 4l-4 16"/></svg>
+        </div>
 
-      <path d="
-        M 24 262 
-        L 72 262 A 16 16 0 0 1 88 278 
-        L 88 354 A 16 16 0 0 0 104 370 
-        L 172 370 A 16 16 0 0 1 188 386 
-        L 188 456 A 16 16 0 0 1 172 472 
-        L 24 472 A 16 16 0 0 1 8 456 
-        L 8 278 A 16 16 0 0 1 24 262 
-        Z" 
-        fill="#fadd4b"
-      />
+        <div class="card c-cyan inset-shadow-light">
+            <div class="deco pos-tl"><div class="dot"></div><div class="dot"></div></div>
+            <div class="deco pos-bl-grid"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+            </svg>
+        </div>
+        
+        <div class="card c-center">
+            <svg style="position: absolute; width: 100%; height: 100%; top:0; left:0;">
+                <path d="M 20 20 Q 25 25 30 20 Q 25 25 25 30 Q 25 25 20 25 Z" fill="#A467FF" opacity="0.8"/>
+                <path d="M 120 100 Q 123 103 126 100 Q 123 103 123 106 Q 123 103 120 103 Z" fill="#3BD3E4" opacity="0.8"/>
+                <circle cx="110" cy="30" r="1.5" fill="#50E39A" opacity="0.5"/>
+                <circle cx="30" cy="120" r="1.5" fill="#3BD3E4" opacity="0.5"/>
+            </svg>
 
-      <rect x="8" y="8" width="140" height="152" rx="16" fill="#fadd4b"/>
-      <rect x="230" y="8" width="122" height="50" rx="16" fill="#fadd4b"/>
-      <rect x="8" y="166" width="80" height="90" rx="16" fill="#fadd4b"/>
-      <rect x="298" y="182" width="54" height="128" rx="16" fill="#fadd4b"/>
-      <rect x="194" y="316" width="158" height="156" rx="16" fill="#fadd4b"/>
+            <svg style="width:0; height:0; position:absolute;">
+                <defs>
+                    <linearGradient id="cyan-purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:var(--color-cyan);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:var(--color-purple-light);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg class="glow-icon" viewBox="0 0 24 24">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+            </svg>
+        </div>
 
-    </svg>
+        <div class="card c-green inset-shadow-light">
+            <div class="deco pos-tl"><div class="dot"></div><div class="dot"></div></div>
+            <div class="deco pos-br-grid"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+            </svg>
+        </div>
 
-    <div class="label" style="top: 24px; left: 24px;">
-      <h3>MODULAR<br>DESIGN</h3>
+        <div class="card c-coral inset-shadow-light">
+            <div class="deco pos-tl"><div class="dot"></div><div class="dot"></div></div>
+            <div class="diagonal-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+            <svg class="icon" viewBox="0 0 24 24">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                <circle cx="12" cy="16" r="1.5" stroke="none" fill="var(--icon-stroke)" />
+            </svg>
+        </div>
+        
+        <div class="card c-blue inset-shadow-light">
+            <div class="deco pos-tl"><div class="dot"></div><div class="dot"></div></div>
+            <div class="deco pos-br-grid"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            <svg class="icon" viewBox="0 0 24 24">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
+                <path d="M6 9l4 3-4 3" />
+                <line x1="12" y1="15" x2="16" y2="15" />
+            </svg>
+        </div>
+        
+        <div class="card c-purple-d inset-shadow-dark">
+            <div class="deco pos-tl"><div class="dot"></div><div class="dot"></div></div>
+            <div class="diagonal-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 2l9 5v10l-9 5-9-5V7z" />
+                <circle cx="12" cy="12" r="3.5" />
+            </svg>
+        </div>
+
     </div>
-    
-    <div class="label pink" style="top: 130px; left: 110px;">
-      <h1>SMART<br>MODULAR<br>LAYOUT.</h1>
-    </div>
-    
-    <div class="label" style="top: 182px; left: 298px; width: 54px; height: 128px; display: flex; justify-content: center; align-items: center;">
-      <div class="vertical-text">INNOVATION</div>
-    </div>
-    
-    <div class="label" style="top: 336px; left: 214px;">
-      <h3>MODERN UI<br>SYSTEM</h3>
-    </div>
-  </div>
+</div>
 
 </body>
 </html>
