@@ -1,0 +1,261 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    /* Base Popup Size */
+    html, body {
+      width: 360px;
+      height: 500px;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Background image layer - Scales to 125% to push the bottom 20% out of view */
+    .bg-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 125%; 
+      background-image: url('https://i.pinimg.com/736x/17/55/23/175523b08ad921dbbc2bb3d9f24e703a.jpg');
+      background-size: cover;
+      background-position: center top;
+      z-index: -1;
+    }
+
+    /* Material You Purple Theme Colors */
+    :root {
+      --primary-purple: #4F378B;
+      --surface-glass: rgba(234, 221, 255, 0.85); /* Translucent light purple */
+      --radius: 20px;
+    }
+
+    /* Header constraints: 5% margin, 20% back, 10% gap, 60% copy = 100% total */
+    .header {
+      display: flex;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 5% 5% 0 5%; /* Top/Left/Right padding provides the 5% margin */
+      gap: 10%;
+      height: 70px;
+    }
+
+    button {
+      border: none;
+      border-radius: var(--radius);
+      background: var(--surface-glass);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    .back-btn {
+      width: 20%;
+    }
+
+    /* Using a CSS mask applies the primary purple color to the external SVG */
+    .back-icon {
+      width: 28px;
+      height: 28px;
+      background-color: var(--primary-purple);
+      mask: url('https://www.svgrepo.com/show/495927/back-square.svg') no-repeat center / contain;
+      -webkit-mask: url('https://www.svgrepo.com/show/495927/back-square.svg') no-repeat center / contain;
+    }
+
+    .copy-btn {
+      width: 60%;
+      color: var(--primary-purple);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .copy-btn.copied {
+      background: var(--primary-purple);
+      color: #FFFFFF;
+    }
+
+    /* Fills the remaining gap dynamically */
+    .preview-area {
+      flex-grow: 1;
+      margin: 5%;
+      background: var(--surface-glass);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-sizing: border-box;
+      color: var(--primary-purple);
+      font-size: 13px;
+      line-height: 1.5;
+      overflow-y: auto;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    
+    /* Scrollbar styling for Material look */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: rgba(79, 55, 139, 0.4); border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="bg-layer"></div>
+  
+  <div class="header">
+    <button class="back-btn" id="backBtn" title="Back to Toolbox">
+      <div class="back-icon"></div>
+    </button>
+    <button class="copy-btn" id="copyBtn">Copy Markdown</button>
+  </div>
+
+  <div class="preview-area" id="preview">Extracting markdown...</div>
+
+  <script src="popup.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    html, body {
+      width: 360px;
+      height: 500px;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Height set to ~118% so exactly 15% of the bottom is cropped out */
+    .bg-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 118%; 
+      background-image: url('https://i.pinimg.com/736x/17/55/23/175523b08ad921dbbc2bb3d9f24e703a.jpg');
+      background-size: cover;
+      background-position: center top;
+      z-index: -1;
+    }
+
+    :root {
+      --primary-purple: #4F378B;
+      --surface-glass: rgba(234, 221, 255, 0.60); /* Reduced to 60% opacity */
+      --radius: 20px;
+    }
+
+    .header {
+      display: flex;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 5% 5% 0 5%; 
+      gap: 10%;
+      height: 70px;
+    }
+
+    button {
+      border: none;
+      border-radius: var(--radius);
+      background: var(--surface-glass);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    .back-btn {
+      width: 20%;
+    }
+
+    /* Improved Back Button using a cleaner Material left arrow */
+    .back-icon {
+      width: 28px;
+      height: 28px;
+      background-color: var(--primary-purple);
+      mask: url('https://www.svgrepo.com/show/520556/arrow-left.svg') no-repeat center / contain;
+      -webkit-mask: url('https://www.svgrepo.com/show/520556/arrow-left.svg') no-repeat center / contain;
+    }
+
+    .copy-btn {
+      width: 60%;
+      color: var(--primary-purple);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .copy-btn.copied {
+      background: var(--primary-purple);
+      color: #FFFFFF;
+    }
+
+    .preview-area {
+      flex-grow: 1;
+      margin: 5%;
+      background: var(--surface-glass);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-sizing: border-box;
+      color: var(--primary-purple);
+      font-size: 13px;
+      line-height: 1.5;
+      overflow-y: auto;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Larger error message class */
+    .error-msg {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      line-height: 1.4;
+    }
+    
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: rgba(79, 55, 139, 0.4); border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="bg-layer"></div>
+  
+  <div class="header">
+    <button class="back-btn" id="backBtn" title="Back to Toolbox">
+      <div class="back-icon"></div>
+    </button>
+    <button class="copy-btn" id="copyBtn">Copy Markdown</button>
+  </div>
+
+  <div class="preview-area" id="preview">Extracting markdown...</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
